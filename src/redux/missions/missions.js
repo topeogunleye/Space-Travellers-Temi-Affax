@@ -16,8 +16,10 @@ export const fetchMissions = () => (dispatch) => {
   axios
     .get('https://api.spacexdata.com/v3/missions')
     .then((response) => {
-      const missions = response.data.slice(0, 5);
-      dispatch(displayMissions(missions));
+      const missions = response.data;
+      /* eslint-disable camelcase */
+      const [mission_id, mission_name, description] = missions;
+      dispatch(displayMissions([mission_id, mission_name, description]));
     })
     .catch(() => {});
 };
