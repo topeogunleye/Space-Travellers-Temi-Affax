@@ -5,9 +5,7 @@ import { fetchMissions } from '../redux/missions/missions';
 const Missions = () => {
   const dispatch = useDispatch();
 
-  const missions = useSelector((state) =>
-    state.missionsReducer.missions
-  );
+  const missions = useSelector((state) => state.missionsReducer.missions);
 
   useEffect(() => {
     dispatch(fetchMissions());
