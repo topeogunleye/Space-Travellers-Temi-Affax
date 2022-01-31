@@ -9,12 +9,12 @@ const Missions = () => {
 
   useEffect(() => {
     dispatch(fetchMissions());
-    console.log(missions);
   }, []);
 
   const missionsDiv = missions.map((mission) => (
     <div key={mission.mission_id}>
       <div className="">{mission.mission_name}</div>
+      <div className="">{mission.description}</div>
     </div>
   ));
 
