@@ -1,27 +1,56 @@
 import axios from 'axios';
 
 const DISPLAY_MISSIONS = 'DISPLAY_MISSIONS';
+const JOIN_MISSION = 'JOIN_MISSION';
 
-const initialState = {
-  missions: [],
-};
+const URL = 'https://api.spacexdata.com/v3/missions';
 
 export const displayMissions = (payload) => ({
   type: DISPLAY_MISSIONS,
   payload,
 });
 
-// missions.js
+export const joinMission = (id) => ({
+  type: JOIN_MISSION,
+  payload: id,
+});
+
 export const fetchMissions = () => (dispatch) => {
   axios
-    .get('https://api.spacexdata.com/v3/missions')
+    .get(URL)
     .then((response) => {
       const missions = response.data;
+      const missionsArray = [];
+      missions.forEach((mission) => {
+        const MISSION = {
+          mission_id: mission.mission_id,
+          mission_name: mission.mission_name,
+          description: mission.description,
+          reserved: false,
+        };
+        missionsArray.push(MISSION);
+      });
       /* eslint-disable camelcase */
-      const [mission_id, mission_name, description] = missions;
-      dispatch(displayMissions([mission_id, mission_name, description]));
+      dispatch(displayMissions(missionsArray));
     })
     .catch(() => {});
+};
+
+export const joinMissions = (missions, id) => {
+  const newState = missions.map((mission) => {
+    if (mission.mission_id !== id) {
+      return mission;
+    }
+    return {
+      ...mission,
+      reserved: true,
+    };
+  });
+  return newState;
+};
+
+const initialState = {
+  missions: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -30,6 +59,11 @@ const reducer = (state = initialState, action) => {
       return {
         missions: action.payload,
       };
+    case JOIN_MISSION:
+      return {
+        missions: joinMissions(state.missions, action.payload),
+      };
+
     default:
       return state;
   }
