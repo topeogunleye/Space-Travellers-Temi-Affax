@@ -44,9 +44,13 @@ export const fetchMissions = () => (dispatch) => {
 
 export const joinMissions = (missions, id) => {
   const newState = missions.map((mission) => {
+    // if the mission id doesn't match the id we are looking for,
+    // return the mission
     if (mission.mission_id !== id) {
       return mission;
     }
+    // if the mission id matches the id we are looking for,
+    // return the mission with reserved set to true
     return {
       ...mission,
       reserved: true,
