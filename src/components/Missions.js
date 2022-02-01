@@ -12,28 +12,29 @@ const Missions = () => {
   }, []);
 
   const missionsDiv = missions.map((mission) => (
-    <div key={mission.mission_id}>
-      <div className="">{mission.mission_name}</div>
-      <div className="">{mission.description}</div>
-    </div>
+    <tr key={mission.mission_id}>
+      <td>{mission.mission_name}</td>
+      <td>{mission.description}</td>
+      <td>
+        <div className="status">
+          <button type="button"> not a member</button>
+          <button type="button"> join mission</button>
+        </div>
+      </td>
+    </tr>
   ));
 
   return (
-    <div className="mission-container">
-      <div className="mission">
-        {missionsDiv}
-        <h2>Mission</h2>
-      </div>
-      <div className="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut itaque
-        voluptatibus aperiam voluptatem doloremque, quam eveniet est aliquam
-        rerum animi?
-      </div>
-      <div className="status">
-        <button type="button"> not a member</button>
-        <button type="button"> join mission</button>
-      </div>
-    </div>
+    <table className="table-fixed">
+      <thead>
+        <tr>
+          <th>Mission</th>
+          <th>Description</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>{missionsDiv}</tbody>
+    </table>
   );
 };
 
