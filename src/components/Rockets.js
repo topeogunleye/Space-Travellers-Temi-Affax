@@ -1,20 +1,35 @@
-import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { fetchRockets } from '../redux/rockets/rockets';
 
-const Rockets = () => (
-  <div className="container">
-    <div className="img-container">
-      <img src="" alt="" />
+const Rockets = () => {
+  const dispatch = useDispatch();
+
+  const rockets = useSelector((state) => state.rocketsReducer.rockets);
+
+  useEffect(() => {
+    dispatch(fetchRockets());
+  }, []);
+
+  const rocketsContainer = rockets.map((rockets) => (
+    <div key={rockets.id}>
+      <div className="">{rockets.flickr_images}</div>
+      <div className="">{rockets.rockets_name}</div>
+      <div className="">{rockets.description}</div>
     </div>
-    <div className="text-container">
+  ));
+  return (
+    <div className="container">
       <h2>Falcon 1</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis non qui
-        doloremque harum aliquam reprehenderit repudiandae, maxime modi
-        quisquam? Provident?
-      </p>
-      <button type="button">Reserve Rocket</button>
+      {rocketsContainer}
+      <div className="img-container">
+        <img src="" alt="" />
+      </div>
+      <div className="text-container">
+        <button type="button">Reserve Rocket</button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Rockets;
