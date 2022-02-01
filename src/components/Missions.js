@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMissions, joinMission } from '../redux/missions/missions';
+import { fetchMissions, joinMission, leaveMission } from '../redux/missions/missions';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -18,7 +18,13 @@ const Missions = () => {
       <td>
         <div className="status">
           {mission.reserved ? (
-            <button type="button"> not a member</button>
+            <button
+              type="button"
+              onClick={() => dispatch(leaveMission(mission.mission_id))}
+            >
+              {' '}
+              not a member
+            </button>
           ) : (
             <button
               type="button"

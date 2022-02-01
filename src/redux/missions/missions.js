@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const DISPLAY_MISSIONS = 'DISPLAY_MISSIONS';
 const JOIN_MISSION = 'JOIN_MISSION';
+const LEAVE_MISSION = 'LEAVE_MISSION';
 
 const URL = 'https://api.spacexdata.com/v3/missions';
 
@@ -15,6 +16,11 @@ export const joinMission = (id) => ({
   payload: id,
 });
 
+export const leaveMission = (payload) => ({
+  type: LEAVE_MISSION,
+  payload,
+});
+// missions.js
 export const fetchMissions = () => (dispatch) => {
   axios
     .get(URL)
@@ -49,6 +55,16 @@ export const joinMissions = (missions, id) => {
   return newState;
 };
 
+export const LeaveMissions = (missions, id) => {
+  const newState = missions.map((mission) => {
+    if (mission.mission_id !== id) {
+      return mission;
+    }
+    return { ...mission, reserved: false };
+  });
+  return newState;
+};
+
 const initialState = {
   missions: [],
 };
@@ -63,7 +79,10 @@ const reducer = (state = initialState, action) => {
       return {
         missions: joinMissions(state.missions, action.payload),
       };
-
+    case LEAVE_MISSION:
+      return {
+        missions: LeaveMissions(state.missions, action.payload),
+      };
     default:
       return state;
   }
