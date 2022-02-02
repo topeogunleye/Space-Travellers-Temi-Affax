@@ -22,13 +22,15 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="header">
-      <nav>
-        <img src={planet} alt="planet logo" />
-        <h1>Space Travellers Hub</h1>
-        <ul>
+    <header className="">
+      <nav className="flex justify-between items-center">
+        <div className="flex justify-between items-center w-56">
+          <img className="w-12 " src={planet} alt="planet logo" />
+          <h1>Space Travellers Hub</h1>
+        </div>
+        <ul className="flex justify-between items-center w-56 text-blue-600 divide-x-2-black ">
           {links.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className="">
               <NavLink to={item.path} className="navlink">
                 {item.text}
               </NavLink>

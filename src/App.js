@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="p-5">
       <Navbar />
       <Routes>
         <Route path="/" element={<Rockets />} />
