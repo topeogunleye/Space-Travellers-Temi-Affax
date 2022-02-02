@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
-import { fetchRockets } from '../redux/rockets/rockets';
+import { fetchRockets, resRocket, canRocket } from '../redux/rockets/rockets';
 
 const Rockets = () => {
   const dispatch = useDispatch();
@@ -13,21 +13,36 @@ const Rockets = () => {
 
   const rocketsContainer = rockets.map((rockets) => (
     <div key={rockets.id}>
-      <div className="">{rockets.flickr_images}</div>
-      <div className="">{rockets.rockets_name}</div>
+      <div className="">{rockets.images}</div>
+      <div className="">{rockets.name}</div>
+      <span>{rockets.reserved && <div><h4>Reserved</h4></div>}</span>
       <div className="">{rockets.description}</div>
+      <div className="text-container">
+        {rockets.reserved && (
+          <button
+            type="button"
+            onClick={() => dispatch(canRocket(rockets.id))}
+          >
+            {' '}
+            Cancel Reservation
+          </button>
+        )}
+        {' '}
+        {!rockets.reserved && (
+        <button
+          type="button"
+          onClick={() => dispatch(resRocket(rockets.id))}
+        >
+          {' '}
+          Reserve Rocket
+        </button>
+        )}
+      </div>
     </div>
   ));
   return (
     <div className="container">
-      <h2>Falcon 1</h2>
-      {rocketsContainer}
-      <div className="img-container">
-        <img src="" alt="" />
-      </div>
-      <div className="text-container">
-        <button type="button">Reserve Rocket</button>
-      </div>
+      <div>{rocketsContainer}</div>
     </div>
   );
 };
