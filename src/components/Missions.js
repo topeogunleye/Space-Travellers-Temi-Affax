@@ -17,9 +17,25 @@ const Missions = () => {
       <td>
         {mission.reserved && (
           <div className="status w-64 flex justify-around text-xs">
-            <span className="badge bg-sky-500 text-white rounded-sm px-1 py-0.5 uppercase grid place-items-center">
+            <span className="badge bg-blue-400 text-white rounded-sm px-1 py-0.5 uppercase grid place-items-center">
               Active Member
             </span>
+          </div>
+        )}
+        {!mission.reserved && (
+          <div className="status w-64 flex justify-around text-xs">
+            <span
+              type="button"
+              className="badge bg-gray-500 text-white rounded-sm uppercase grid place-items-center px-1 py-0.5"
+            >
+              not a member
+            </span>
+          </div>
+        )}
+      </td>
+      <td>
+        {mission.reserved && (
+          <div className="w-64 flex justify-around text-xs">
             <button
               type="button"
               className="text-sm text-red-600 border-red-400 rounded-sm border-2 px-1 py-0.5"
@@ -31,13 +47,7 @@ const Missions = () => {
           </div>
         )}
         {!mission.reserved && (
-          <div className="status w-64 flex justify-around text-xs">
-            <span
-              type="button"
-              className="badge bg-gray-500 text-white rounded-sm uppercase grid place-items-center px-1 py-0.5"
-            >
-              not a member
-            </span>
+          <div className="w-64 flex justify-around text-xs">
             <button
               type="button"
               className="text-sm text-gray-600 border-gray-400 rounded-sm border-2 px-1 py-0.5"
@@ -58,7 +68,8 @@ const Missions = () => {
         <tr className="divide-x">
           <th className="flex align-left pl-1">Mission</th>
           <th className="ml-0">Description</th>
-          <th className="flex">Status</th>
+          <th className="flex pl-1">Status</th>
+          <th> </th>
         </tr>
       </thead>
       <tbody>{missionsDiv}</tbody>
