@@ -15,6 +15,7 @@ const Rockets = () => {
     <div key={rockets.id}>
       <div className="">{rockets.images}</div>
       <div className="">{rockets.name}</div>
+      <span>{rockets.reserved && <div><h4>Reserved</h4></div>}</span>
       <div className="">{rockets.description}</div>
       <div className="text-container">
         {rockets.reserved && (
