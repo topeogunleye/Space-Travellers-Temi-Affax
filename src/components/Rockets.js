@@ -11,7 +11,7 @@ const Rockets = () => {
     <div className="flex justify-around m-10" key={rockets.id}>
       <img className="h-40 w-40 mr-5" src={rockets.images} alt="" />
       <div>
-        <div className="font-sans ">{rockets.name}</div>
+        <div className="font-sans  font-bold">{rockets.name}</div>
         <span>
           {rockets.reserved && (
           <span className="inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold  text-white bg-[#18A2B8] rounded-md">Reserved</span>
