@@ -10,7 +10,9 @@ const MyProfile = () => {
   );
 
   const reserved = reservedMissions.map((mission) => (
-    <li key={mission.mission_id}>{mission.mission_name}</li>
+    <li key={mission.mission_id} className="p-4 w-full">
+      {mission.mission_name}
+    </li>
   ));
 
   const reservedRockets = rockets.filter(
@@ -18,31 +20,37 @@ const MyProfile = () => {
   );
 
   const resRoc = reservedRockets.map((rocket) => (
-    <li key={rocket.id}>{rocket.name}</li>
+    <li key={rocket.id} className="p-4 w-full">
+      {rocket.name}
+    </li>
   ));
   return (
-    <div className="flex justify-around">
+    <div className="md:flex justify-around h-screen align-top">
       <table className="table-auto">
         <thead>
           <tr>
-            <th>My Missions</th>
+            <th className="text-3xl flex align-left">My Missions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="list-none">{reserved}</td>
+          <tr className="min-w-vw">
+            <td className="list-none divide-y flex align-top flex-col border-2 h-fit w-4/5 md:w-96">
+              {reserved}
+            </td>
           </tr>
         </tbody>
       </table>
       <table className="table-auto">
         <thead>
           <tr>
-            <th>My Rockets</th>
+            <th className="text-3xl flex align-left">My Rockets</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="list-none">{resRoc}</td>
+          <tr className="min-w-vw">
+            <td className="list-none divide-y flex  align-top flex-col border-2 h-fit w-4/5 md:w-96">
+              {resRoc}
+            </td>
           </tr>
         </tbody>
       </table>
