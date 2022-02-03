@@ -21,17 +21,31 @@ const MyProfile = () => {
     <li key={rocket.id}>{rocket.name}</li>
   ));
   return (
-    <div>
-      <div className="my-profile">
-        <div className="missions">
-          <h2>My Missions</h2>
-          <ul>{reserved}</ul>
-        </div>
-        <div className="rockets">
-          <h2>My Rockets</h2>
-          <ul>{resRoc}</ul>
-        </div>
-      </div>
+    <div className="flex justify-around">
+      <table className="table-auto">
+        <thead>
+          <tr>
+            <th>My Missions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="list-none">{reserved}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table className="table-auto">
+        <thead>
+          <tr>
+            <th>My Rockets</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="list-none">{resRoc}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };
