@@ -2,13 +2,15 @@
 
 This is react-redux project that involves creating a rocket and mission booking for space adventures. It uses the SpaceX API to get the data that is implemented using axios and thunk.
 
-![screenshot](./images/scn1.png)
-![screenshot](./images/scn2.png)
-![screenshot](./images/scn3.png)
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
+![screenshot](./src/images/scn1.png)
+![screenshot](./src/images/scn2.png)
+![screenshot](./src/images/scn3.png)
+
 
 ## Built With
-
-- HTML5
+- jsx
 - Tailwindcss
 - Javascript
 - React
