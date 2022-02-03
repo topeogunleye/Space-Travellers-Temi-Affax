@@ -10,7 +10,9 @@ const MyProfile = () => {
   );
 
   const reserved = reservedMissions.map((mission) => (
-    <li key={mission.mission_id}>{mission.mission_name}</li>
+    <li key={mission.mission_id} className="p-4 w-full">
+      {mission.mission_name}
+    </li>
   ));
 
   const reservedRockets = rockets.filter(
@@ -18,20 +20,40 @@ const MyProfile = () => {
   );
 
   const resRoc = reservedRockets.map((rocket) => (
-    <li key={rocket.id}>{rocket.name}</li>
+    <li key={rocket.id} className="p-4 w-full">
+      {rocket.name}
+    </li>
   ));
   return (
-    <div>
-      <div className="my-profile">
-        <div className="missions">
-          <h2>My Missions</h2>
-          <ul>{reserved}</ul>
-        </div>
-        <div className="rockets">
-          <h2>My Rockets</h2>
-          <ul>{resRoc}</ul>
-        </div>
-      </div>
+    <div className="md:flex justify-around h-screen align-top">
+      <table className="table-auto">
+        <thead>
+          <tr>
+            <th className="text-3xl flex align-left">My Missions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="min-w-vw">
+            <td className="list-none divide-y flex align-top flex-col border-2 h-fit w-4/5 md:w-96">
+              {reserved}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table className="table-auto">
+        <thead>
+          <tr>
+            <th className="text-3xl flex align-left">My Rockets</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="min-w-vw">
+            <td className="list-none divide-y flex  align-top flex-col border-2 h-fit w-4/5 md:w-96">
+              {resRoc}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };
