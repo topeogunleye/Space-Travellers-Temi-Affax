@@ -2,7 +2,7 @@
 
 # Space-Travellers-Hub
 
-This is react-redux project that involves creating a rocket and mission booking for space adventures. It uses the SpaceX API to get the data that is implemented using axios and thunk.
+> This is react-redux project that involves creating a rocket and mission booking for space adventures. It uses the SpaceX API to get the data that is implemented using axios and thunk.
 
 ![video-demo](./src/images/space-travellers-demo.gif)
 
