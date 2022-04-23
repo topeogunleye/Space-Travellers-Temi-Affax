@@ -4,10 +4,7 @@ This is react-redux project that involves creating a rocket and mission booking 
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-![screenshot](./src/images/scn1.png)
-![screenshot](./src/images/scn2.png)
-![screenshot](./src/images/scn3.png)
-
+![video-demo](./src/images/space-travellers-demo.gif)
 
 ## Built With
 - jsx
