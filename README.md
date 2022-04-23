@@ -50,12 +50,12 @@ The Project should now be live on your browser
 
 - GitHub: [@DelhinRharl](https://github.com/DelhinRharl)
 - Twitter: [@tdelhinrharl](https://twitter.com/delhinrharl)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/affaxed-kiprotich)
+- LinkedIn: [affaxed-kiprotich](https://linkedin.com/in/affaxed-kiprotich)
 
 👤 **Temitope Ogunleye**
-- GitHub: [@githubhandle](https://github.com/topeogunleye)
-- Twitter: [@twitterhandle](https://twitter.com/topeogunleye21)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/ogunleye)
+- GitHub: [@topeogunleye](https://github.com/topeogunleye)
+- Twitter: [@tope_leye](https://twitter.com/tope_leye)
+- LinkedIn: [ogunleye](https://linkedin.com/in/ogunleye)
 
 
 Contributions, issues, and feature requests are welcome!
