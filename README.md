@@ -46,13 +46,13 @@ The Project should now be live on your browser
 
 ## Authors
 
-👤 **Author1**
+👤 **Affaxed Kiprotich**
 
 - GitHub: [@DelhinRharl](https://github.com/DelhinRharl)
 - Twitter: [@tdelhinrharl](https://twitter.com/delhinrharl)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/affaxed-kiprotich)
 
-👤 **Author1**
+👤 **Temitope Ogunleye**
 - GitHub: [@githubhandle](https://github.com/topeogunleye)
 - Twitter: [@twitterhandle](https://twitter.com/topeogunleye21)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/ogunleye)
